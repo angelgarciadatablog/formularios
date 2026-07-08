@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taller: tu web y tu agente de IA — Formulario previo</title>
+  <meta name="description" content="Formulario previo al taller: cuéntame desde dónde partes para preparar la sesión a tu medida." />
+  <meta name="robots" content="noindex, follow" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/form.css" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KDXJ37SD');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDXJ37SD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="form-header">
+  <a class="form-logo" href="https://www.angelgarciadatablog.com/">← Angel García</a>
+</header>
+
+<main class="form-card">
+  <h1 class="form-titulo">Taller: tu propia web y tu agente de IA</h1>
+  <p class="form-intro">
+    El <strong>18 de julio</strong> vamos a construir dos cosas: tu <strong>web propia en GitHub Pages</strong>
+    y un <strong>agente de Claude</strong> que funcione como tu segundo cerebro.
+    Cuéntame desde dónde partes para preparar la sesión a tu medida — te toma 2 minutos.
+  </p>
+
+  <form class="formulario" data-formulario-id="taller-amigos-pucp">
+
+    <div class="form-campo">
+      <label class="form-label" for="campoNombre">¿Cuál es tu nombre?</label>
+      <input type="text" id="campoNombre" name="nombre" placeholder="Tu nombre" required />
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoEmail">¿Cuál es tu correo?</label>
+      <input type="email" id="campoEmail" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Qué sistema operativo tiene tu laptop?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="sistema_operativo" value="mac" required /><span>Mac</span></label>
+        <label><input type="radio" name="sistema_operativo" value="windows" /><span>Windows</span></label>
+        <label><input type="radio" name="sistema_operativo" value="linux" /><span>Linux</span></label>
+        <label><input type="radio" name="sistema_operativo" value="no-tengo" /><span>No tengo laptop</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Tienes cuenta de GitHub?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="cuenta_github" value="si" required /><span>Sí</span></label>
+        <label><input type="radio" name="cuenta_github" value="no" /><span>No</span></label>
+        <label><input type="radio" name="cuenta_github" value="no-se" /><span>No sé qué es</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Qué tanto has usado la terminal (línea de comandos)?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="experiencia_terminal" value="nunca" required /><span>Nunca</span></label>
+        <label><input type="radio" name="experiencia_terminal" value="basico" /><span>Lo básico</span></label>
+        <label><input type="radio" name="experiencia_terminal" value="comodo" /><span>Me muevo cómodo</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Has usado alguna IA (ChatGPT, Claude, Gemini)?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="uso_ia" value="nunca" required /><span>Nunca</span></label>
+        <label><input type="radio" name="uso_ia" value="a-veces" /><span>A veces</span></label>
+        <label><input type="radio" name="uso_ia" value="todos-los-dias" /><span>Todos los días</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoExpectativa">¿Qué te gustaría llevarte del taller?</label>
+      <textarea id="campoExpectativa" name="expectativa" rows="4"
+        placeholder="Por ejemplo: quiero tener mi portafolio en línea, quiero entender cómo usar la IA para..." required></textarea>
+    </div>
+
+    <div class="form-hp" aria-hidden="true">
+      <label>No llenes este campo<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+
+    <button type="submit" class="form-btn">Enviar mis respuestas</button>
+  </form>
+
+  <div class="form-estado" id="formEstado"></div>
+</main>
+
+<script src="../assets/form.js"></script>
+</body>
+</html>

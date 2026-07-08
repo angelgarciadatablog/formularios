@@ -1,0 +1,215 @@
+/* Estilos compartidos de todos los formularios.
+   Paleta idéntica a la web principal (assets/styles.css del blog). */
+
+:root {
+  --color-fondo: #0f0f0f;
+  --color-superficie: #1a1a1a;
+  --color-borde: #2a2a2a;
+  --color-texto: #e8e8e8;
+  --color-texto-suave: #888888;
+  --color-texto-cuerpo: #b5b5b5;
+  --color-acento: #2563eb;
+  --color-acento-hover: #1d4ed8;
+  --fuente: 'Inter', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px;
+}
+
+.form-header {
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+.form-logo {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.form-logo:hover {
+  color: var(--color-acento);
+}
+
+.form-card {
+  width: 100%;
+  max-width: 640px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 32px 28px;
+}
+
+.form-titulo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.form-intro {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin-bottom: 28px;
+}
+
+.form-intro strong {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.form-campo input[type="text"],
+.form-campo input[type="email"],
+.form-campo textarea {
+  width: 100%;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: var(--fuente);
+  color: var(--color-texto);
+  outline: none;
+  resize: vertical;
+}
+
+.form-campo input::placeholder,
+.form-campo textarea::placeholder {
+  color: #555555;
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.form-campo input:focus,
+.form-campo textarea:focus {
+  border-color: var(--color-acento);
+}
+
+/* Opciones tipo pastilla (radios) */
+.form-opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-opciones label {
+  cursor: pointer;
+}
+
+.form-opciones input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-opciones span {
+  display: inline-block;
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--color-texto-cuerpo);
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.form-opciones input[type="radio"]:checked + span {
+  border-color: var(--color-acento);
+  background-color: rgba(37, 99, 235, 0.15);
+  color: var(--color-texto);
+}
+
+.form-opciones input[type="radio"]:focus-visible + span {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* Honeypot: invisible para humanos, visible para bots */
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.form-btn {
+  align-self: flex-start;
+  background-color: var(--color-acento);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--fuente);
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: var(--color-acento-hover);
+}
+
+.form-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-estado {
+  display: none;
+  font-size: 16px;
+  color: var(--color-texto);
+  text-align: center;
+  padding: 24px 0;
+}
+
+.form-estado.visible {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 24px 16px 60px;
+  }
+
+  .form-card {
+    padding: 24px 18px;
+  }
+
+  .form-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
