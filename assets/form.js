@@ -2,7 +2,7 @@
 // Cada página define su identidad en el atributo data-formulario-id del <form>.
 
 // URL del web app de Apps Script (deploy como "Ejecutar como: yo" + "Acceso: cualquier persona")
-const FORM_ENDPOINT = 'PEGA_AQUI_LA_URL_DEL_APPS_SCRIPT';
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyozs7sTiUdF6ukPjK3ibZfxhRSk9z8s-WyaR71fa6E-QdrdxxYIEZWR6dk5dzyWr-1HA/exec';
 
 // Campos de opción múltiple: se recolectan como array (varias respuestas por campo).
 const CAMPOS_LISTA = ['tipo_web', 'secciones', 'material_listo', 'que_actualizas'];
