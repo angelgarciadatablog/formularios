@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taller: tu web y tu agente de IA — Formulario previo</title>
-  <meta name="description" content="Formulario previo al taller: cuéntame desde dónde partes para preparar la sesión a tu medida." />
+  <title>Taller: tu propia web — Formulario previo</title>
+  <meta name="description" content="Formulario previo al taller: cuéntame cómo te imaginas tu web para prepararla a tu medida." />
   <meta name="robots" content="noindex, follow" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/form.css" />
@@ -27,14 +27,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <main class="form-card">
-  <h1 class="form-titulo">Taller: tu propia web y tu agente de IA</h1>
+  <h1 class="form-titulo">Taller: tu propia web</h1>
   <p class="form-intro">
-    El <strong>18 de julio</strong> vamos a construir dos cosas: tu <strong>web propia en GitHub Pages</strong>
-    y un <strong>agente de Claude</strong> que funcione como tu segundo cerebro.
-    Cuéntame desde dónde partes para preparar la sesión a tu medida — te toma 2 minutos.
+    El <strong>sábado 18 de julio</strong> vamos a construir tu <strong>web propia en GitHub Pages</strong>.
+    Cuéntame cómo te la imaginas para llegar al taller con todo listo y que aprovechemos el tiempo en construir, no en preguntar.
+    Son unos minutos — mientras más detalle, mejor queda tu web.
   </p>
 
   <form class="formulario" data-formulario-id="taller-amigos-pucp">
+
+    <!-- ===== Bloque A — Tu web ===== -->
+    <h2 class="form-seccion">Tu web</h2>
 
     <div class="form-campo">
       <label class="form-label" for="campoNombre">¿Cuál es tu nombre?</label>
@@ -47,48 +50,158 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="form-campo">
+      <span class="form-label">¿Cómo te imaginas tu web? <em class="form-hint">(puedes elegir varias)</em></span>
+      <div class="form-opciones" data-grupo-requerido="tipo_web">
+        <label><input type="checkbox" name="tipo_web" value="portafolio" /><span>Portafolio de trabajos</span></label>
+        <label><input type="checkbox" name="tipo_web" value="blog" /><span>Blog para escribir</span></label>
+        <label><input type="checkbox" name="tipo_web" value="catalogo" /><span>Catálogo de proyectos o productos</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoObjetivo">¿Para qué quieres tu web? ¿Qué te gustaría lograr con ella?</label>
+      <textarea id="campoObjetivo" name="objetivo_web" rows="3"
+        placeholder="Por ejemplo: mostrar mi trabajo para conseguir clientes, tener un lugar donde publicar mis ideas..." required></textarea>
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoWebIdeal">Describe con el mayor detalle posible cómo te imaginas tu web ideal</label>
+      <textarea id="campoWebIdeal" name="web_ideal" rows="5"
+        placeholder="Colores, estilo, qué se ve al entrar, qué páginas tiene, qué sensación quieres transmitir..." required></textarea>
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoReferencia">¿Hay alguna web o cuenta que te guste como referencia?</label>
+      <input type="url" id="campoReferencia" name="referencia_visual" placeholder="Pega el link (opcional)" />
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Qué secciones te gustaría que tenga?</span>
+      <div class="form-opciones" data-grupo-requerido="secciones">
+        <label><input type="checkbox" name="secciones" value="inicio" /><span>Inicio</span></label>
+        <label><input type="checkbox" name="secciones" value="sobre-mi" /><span>Sobre mí</span></label>
+        <label><input type="checkbox" name="secciones" value="galeria" /><span>Galería o portafolio</span></label>
+        <label><input type="checkbox" name="secciones" value="blog" /><span>Blog o artículos</span></label>
+        <label><input type="checkbox" name="secciones" value="catalogo" /><span>Catálogo</span></label>
+        <label><input type="checkbox" name="secciones" value="contacto" /><span>Contacto</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Quieres un formulario para que te contacten?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="formulario_contacto" value="si" required /><span>Sí</span></label>
+        <label><input type="radio" name="formulario_contacto" value="no" /><span>No</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Quieres un botón de WhatsApp?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="boton_whatsapp" value="si" required /><span>Sí</span></label>
+        <label><input type="radio" name="boton_whatsapp" value="no" /><span>No</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo form-oculto" id="campoWhatsappNumero">
+      <label class="form-label" for="campoWhatsappInput">¿A qué número? (con código de país)</label>
+      <input type="text" id="campoWhatsappInput" name="whatsapp_numero" placeholder="+51 999 999 999" />
+    </div>
+
+    <div class="form-campo">
+      <label class="form-label" for="campoRedes">¿Quieres enlazar redes (Instagram, LinkedIn, YouTube)?</label>
+      <textarea id="campoRedes" name="redes_sociales" rows="2"
+        placeholder="Pega los links (opcional)"></textarea>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Ya tienes material listo para tu web, o lo armamos en el taller?</span>
+      <div class="form-opciones" data-grupo-requerido="material_listo">
+        <label><input type="checkbox" name="material_listo" value="fotos" /><span>Fotos o imágenes</span></label>
+        <label><input type="checkbox" name="material_listo" value="textos" /><span>Textos ya escritos</span></label>
+        <label><input type="checkbox" name="material_listo" value="proyectos" /><span>Proyectos o trabajos para mostrar</span></label>
+        <label><input type="checkbox" name="material_listo" value="videos" /><span>Videos (links de YouTube)</span></label>
+        <label><input type="checkbox" name="material_listo" value="nada" /><span>Todavía no tengo nada</span></label>
+      </div>
+    </div>
+
+    <!-- ===== Bloque B — Mantenimiento ===== -->
+    <h2 class="form-seccion">Cómo la mantendrías</h2>
+
+    <div class="form-campo">
+      <span class="form-label">Cuando la actualices, ¿qué agregarías o cambiarías?</span>
+      <div class="form-opciones" data-grupo-requerido="que_actualizas">
+        <label><input type="checkbox" name="que_actualizas" value="proyectos" /><span>Nuevos proyectos</span></label>
+        <label><input type="checkbox" name="que_actualizas" value="textos" /><span>Nuevos textos o posts</span></label>
+        <label><input type="checkbox" name="que_actualizas" value="fotos" /><span>Nuevas fotos o imágenes</span></label>
+        <label><input type="checkbox" name="que_actualizas" value="productos" /><span>Nuevos productos</span></label>
+        <label><input type="checkbox" name="que_actualizas" value="otra" /><span>Otra cosa</span></label>
+      </div>
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Cada cuánto crees que actualizarías tu web?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="frecuencia_actualizacion" value="casi-nunca" required /><span>Casi nunca</span></label>
+        <label><input type="radio" name="frecuencia_actualizacion" value="al-mes" /><span>Una vez al mes</span></label>
+        <label><input type="radio" name="frecuencia_actualizacion" value="cada-semana" /><span>Cada semana</span></label>
+      </div>
+    </div>
+
+    <!-- ===== Bloque C — Preguntas técnicas ===== -->
+    <h2 class="form-seccion">Unas preguntas rápidas</h2>
+    <p class="form-subintro">Para preparar tu máquina antes del taller. Si no sabes algo, no te preocupes.</p>
+
+    <div class="form-campo">
       <span class="form-label">¿Qué sistema operativo tiene tu laptop?</span>
       <div class="form-opciones">
         <label><input type="radio" name="sistema_operativo" value="mac" required /><span>Mac</span></label>
         <label><input type="radio" name="sistema_operativo" value="windows" /><span>Windows</span></label>
-        <label><input type="radio" name="sistema_operativo" value="linux" /><span>Linux</span></label>
-        <label><input type="radio" name="sistema_operativo" value="no-tengo" /><span>No tengo laptop</span></label>
       </div>
     </div>
 
     <div class="form-campo">
-      <span class="form-label">¿Tienes cuenta de GitHub?</span>
+      <span class="form-label">¿Conoces GitHub?</span>
       <div class="form-opciones">
-        <label><input type="radio" name="cuenta_github" value="si" required /><span>Sí</span></label>
-        <label><input type="radio" name="cuenta_github" value="no" /><span>No</span></label>
-        <label><input type="radio" name="cuenta_github" value="no-se" /><span>No sé qué es</span></label>
+        <label><input type="radio" name="conoce_github" value="tengo-cuenta" required /><span>Sí, tengo cuenta</span></label>
+        <label><input type="radio" name="conoce_github" value="lo-he-escuchado" /><span>Lo he escuchado, no tengo cuenta</span></label>
+        <label><input type="radio" name="conoce_github" value="no" /><span>No lo conozco</span></label>
       </div>
     </div>
 
     <div class="form-campo">
-      <span class="form-label">¿Qué tanto has usado la terminal (línea de comandos)?</span>
+      <label class="form-label" for="campoSpecs">Si sabes la memoria RAM y el almacenamiento de tu laptop, escríbelo</label>
+      <input type="text" id="campoSpecs" name="specs_laptop" placeholder="Ej: 8 GB RAM, 256 GB (opcional)" />
+    </div>
+
+    <div class="form-campo">
+      <span class="form-label">¿Tienes Google Drive instalado como aplicación en tu computadora?</span>
       <div class="form-opciones">
-        <label><input type="radio" name="experiencia_terminal" value="nunca" required /><span>Nunca</span></label>
-        <label><input type="radio" name="experiencia_terminal" value="basico" /><span>Lo básico</span></label>
-        <label><input type="radio" name="experiencia_terminal" value="comodo" /><span>Me muevo cómodo</span></label>
+        <label><input type="radio" name="drive_instalado" value="si" required /><span>Sí</span></label>
+        <label><input type="radio" name="drive_instalado" value="no" /><span>No</span></label>
+        <label><input type="radio" name="drive_instalado" value="no-se" /><span>No sé</span></label>
       </div>
     </div>
 
     <div class="form-campo">
-      <span class="form-label">¿Has usado alguna IA (ChatGPT, Claude, Gemini)?</span>
+      <span class="form-label">¿Tienes espacio libre en tu cuenta de Google?</span>
       <div class="form-opciones">
-        <label><input type="radio" name="uso_ia" value="nunca" required /><span>Nunca</span></label>
-        <label><input type="radio" name="uso_ia" value="a-veces" /><span>A veces</span></label>
-        <label><input type="radio" name="uso_ia" value="todos-los-dias" /><span>Todos los días</span></label>
+        <label><input type="radio" name="espacio_google" value="tengo-espacio" required /><span>Sí, tengo espacio</span></label>
+        <label><input type="radio" name="espacio_google" value="casi-llena" /><span>Está casi llena</span></label>
+        <label><input type="radio" name="espacio_google" value="no-se" /><span>No sé</span></label>
       </div>
     </div>
 
     <div class="form-campo">
-      <label class="form-label" for="campoExpectativa">¿Qué te gustaría llevarte del taller?</label>
-      <textarea id="campoExpectativa" name="expectativa" rows="4"
-        placeholder="Por ejemplo: quiero tener mi portafolio en línea, quiero entender cómo usar la IA para..." required></textarea>
+      <span class="form-label">¿Conoces Obsidian?</span>
+      <div class="form-opciones">
+        <label><input type="radio" name="conoce_obsidian" value="lo-uso" /><span>Sí, lo uso</span></label>
+        <label><input type="radio" name="conoce_obsidian" value="lo-he-escuchado" /><span>Lo he escuchado</span></label>
+        <label><input type="radio" name="conoce_obsidian" value="no" /><span>No lo conozco</span></label>
+      </div>
     </div>
 
+    <!-- Honeypot anti-spam: invisible para humanos -->
     <div class="form-hp" aria-hidden="true">
       <label>No llenes este campo<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
     </div>

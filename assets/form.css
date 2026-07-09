@@ -74,6 +74,40 @@ body {
   font-weight: 600;
 }
 
+/* Subtítulo de bloque dentro del formulario */
+.form-seccion {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-texto-suave);
+  margin-top: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.formulario .form-seccion:first-child {
+  margin-top: 0;
+}
+
+.form-subintro {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-texto-suave);
+  margin-top: -8px;
+}
+
+.form-hint {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-texto-suave);
+}
+
+/* Campo condicional oculto (se muestra por JS) */
+.form-oculto {
+  display: none;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -130,7 +164,8 @@ body {
   cursor: pointer;
 }
 
-.form-opciones input[type="radio"] {
+.form-opciones input[type="radio"],
+.form-opciones input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -146,13 +181,15 @@ body {
   transition: border-color 0.15s, color 0.15s, background-color 0.15s;
 }
 
-.form-opciones input[type="radio"]:checked + span {
+.form-opciones input[type="radio"]:checked + span,
+.form-opciones input[type="checkbox"]:checked + span {
   border-color: var(--color-acento);
   background-color: rgba(37, 99, 235, 0.15);
   color: var(--color-texto);
 }
 
-.form-opciones input[type="radio"]:focus-visible + span {
+.form-opciones input[type="radio"]:focus-visible + span,
+.form-opciones input[type="checkbox"]:focus-visible + span {
   outline: 2px solid var(--color-acento);
   outline-offset: 2px;
 }
