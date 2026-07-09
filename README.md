@@ -6,12 +6,12 @@ Formularios personalizados de `angelgarciadatablog.com`, servidos con GitHub Pag
 
 ```
 Página estática (este repo)  →  POST  →  Apps Script web app  →  BigQuery
-GitHub Pages                            cuenta datablog          datablog-datasets-ga4.formularios.respuestas
+GitHub Pages                            cuenta datablog          datablog-datasets-360.formularios.respuestas
 ```
 
 1. **Frontend**: HTML estático por formulario + `assets/form.css` y `assets/form.js` compartidos. El `<form>` declara su identidad en `data-formulario-id`.
 2. **Backend**: web app de Apps Script (cuenta datablog, script standalone `formularios-backend`). Copia de referencia del código en [`apps-script/Code.gs`](apps-script/Code.gs). El deploy real se hace en script.google.com: cada cambio de código requiere una **nueva implementación** para reflejarse en la URL `/exec`.
-3. **Datos**: tabla genérica `formularios.respuestas` (proyecto `datablog-datasets-ga4`). Las respuestas van en una columna de tipo JSON — cualquier formulario nuevo cabe sin cambiar el esquema. La cuenta datablog tiene rol WRITER solo sobre ese dataset (mínimo privilegio).
+3. **Datos**: tabla genérica `formularios.respuestas` (proyecto `datablog-datasets-360`). Las respuestas van en una columna de tipo JSON — cualquier formulario nuevo cabe sin cambiar el esquema. La cuenta datablog tiene rol WRITER solo sobre ese dataset (mínimo privilegio).
 
 ## Cómo agregar un formulario nuevo
 
@@ -35,7 +35,7 @@ Cada página incluye el contenedor GTM del sitio principal (`GTM-KDXJ37SD`). Al 
 SELECT timestamp,
        JSON_VALUE(respuestas, '$.nombre')      AS nombre,
        JSON_VALUE(respuestas, '$.expectativa') AS expectativa
-FROM `datablog-datasets-ga4.formularios.respuestas`
+FROM `datablog-datasets-360.formularios.respuestas`
 WHERE formulario_id = 'taller-amigos-pucp'
 ORDER BY timestamp;
 ```

@@ -4,7 +4,7 @@
 // (cuenta angelgarciadatablog, script standalone "formularios-backend").
 // Requiere el servicio avanzado "BigQuery" activado en el editor (Servicios → BigQuery).
 
-const PROJECT_ID = 'datablog-datasets-ga4';
+const PROJECT_ID = 'datablog-datasets-360';
 const DATASET_ID = 'formularios';
 const TABLE_ID = 'respuestas';
 
