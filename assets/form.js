@@ -74,9 +74,12 @@ form.addEventListener('submit', async function (e) {
   estado.classList.remove('visible');
 
   try {
-    await fetch(FORM_ENDPOINT, {
+    // El endpoint devuelve Access-Control-Allow-Origin: *, así que podemos leer
+    // la respuesta y confirmar de verdad que se guardó (no un "gracias" a ciegas).
+    // Content-Type text/plain evita el preflight OPTIONS que Apps Script no responde.
+    const resp = await fetch(FORM_ENDPOINT, {
       method: 'POST',
-      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({
         formulario_id: formularioId,
         respuestas: respuestas,
@@ -85,6 +88,11 @@ form.addEventListener('submit', async function (e) {
         user_agent: navigator.userAgent
       })
     });
+
+    const data = await resp.json();
+    if (data.status !== 'ok') {
+      throw new Error('respuesta del servidor: ' + data.status);
+    }
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'form_submit', formulario_id: formularioId });
