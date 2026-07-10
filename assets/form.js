@@ -97,9 +97,23 @@ form.addEventListener('submit', async function (e) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'form_submit', formulario_id: formularioId });
 
-    form.style.display = 'none';
-    estado.textContent = '✓ ¡Listo! Tus respuestas fueron enviadas. Gracias.';
-    estado.classList.add('visible');
+    // Cada formulario define su propia página de gracias en un .form-gracias.
+    // Si no la define, se cae al mensaje genérico de #formEstado.
+    const gracias = document.querySelector('.form-gracias');
+    if (gracias) {
+      const card = document.querySelector('.form-card');
+      for (const bloque of card.children) {
+        if (bloque !== gracias && bloque !== estado) {
+          bloque.classList.add('form-oculto');
+        }
+      }
+      gracias.classList.remove('form-oculto');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      form.style.display = 'none';
+      estado.textContent = '✓ ¡Listo! Tus respuestas fueron enviadas. Gracias.';
+      estado.classList.add('visible');
+    }
   } catch (err) {
     btn.disabled = false;
     btn.textContent = 'Enviar mis respuestas';

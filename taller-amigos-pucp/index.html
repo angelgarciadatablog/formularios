@@ -72,7 +72,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="form-campo">
       <label class="form-label" for="campoReferencia">¿Hay alguna web o cuenta que te guste como referencia?</label>
-      <input type="url" id="campoReferencia" name="referencia_visual" placeholder="Pega el link (opcional)" />
+      <textarea id="campoReferencia" name="referencia_visual" rows="3"
+        placeholder="Pega uno o varios links, uno por línea (opcional)"></textarea>
     </div>
 
     <div class="form-campo">
@@ -209,9 +210,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button type="submit" class="form-btn">Enviar mis respuestas</button>
   </form>
 
+  <!-- Página de gracias: se muestra al enviar, reemplazando todo lo de arriba -->
+  <div class="form-gracias form-oculto">
+    <h1 class="form-titulo">¡Listo! Nos vemos el sábado</h1>
+    <p class="form-intro">
+      Tus respuestas ya llegaron. Las voy a revisar antes del taller para preparar tu web a tu medida,
+      así que no tienes que hacer nada más por ahora.
+    </p>
+    <p class="form-intro">
+      El <strong>sábado 18 de julio</strong> solo trae tu laptop y ten a mano tu cuenta de Google.
+      Si necesito algo más, te escribo por WhatsApp.
+    </p>
+  </div>
+
   <div class="form-estado" id="formEstado"></div>
 </main>
 
-<script src="../assets/form.js?v=2"></script>
+<script src="../assets/form.js?v=3"></script>
 </body>
 </html>
