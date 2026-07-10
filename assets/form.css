@@ -103,9 +103,11 @@ body {
   color: var(--color-texto-suave);
 }
 
-/* Campo condicional oculto (se muestra por JS) */
+/* Utilidad de ocultado (la controla el JS).
+   !important porque .formulario y .form-campo declaran su propio display
+   más abajo y, a igual especificidad, la última regla ganaría. */
 .form-oculto {
-  display: none;
+  display: none !important;
 }
 
 .formulario {
